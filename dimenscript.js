@@ -7,6 +7,8 @@ c.style  = "display:none;";
 document.body.appendChild(c);
 var ctx = c.getContext("2d");
 
+var b6 = "";
+
 function renderImage(src,degree, w, h){
 	var modDegree = 0;
   if(degree != Math.abs(degree)){
@@ -74,12 +76,16 @@ function renderImage(src,degree, w, h){
   		ctx.drawImage(img,0,i * (height/(height*modDegree))*(img.height/height), img.width, i * (height/(height*modDegree))/(height*modDegree), window.innerWidth/2-width/2+distIns/2, window.innerHeight/2-height*modDegree/2+(vars), sized, 1);
       distIn -= x;
     }
-		var b6  = c.toDataURL();
+		b6  = c.toDataURL();
 		c.remove();
-		return b6;
+		
 	};
   if(img.src == null || img.src === ""){
 		img.src = src;
   }
 
+}
+
+function getBase(){
+	return b6;	
 }
