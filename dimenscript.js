@@ -3,6 +3,7 @@ var c  = document.createElement("canvas");
 c.style = "position:absolute; top: 0; left: 0;"
 c.width = 1000;
 c.height = 1000;
+c.style  = "display:none;";
 document.body.appendChild(c);
 var ctx = c.getContext("2d");
 
@@ -73,8 +74,12 @@ function renderImage(src,degree, w, h){
   		ctx.drawImage(img,0,i * (height/(height*modDegree))*(img.height/height), img.width, i * (height/(height*modDegree))/(height*modDegree), window.innerWidth/2-width/2+distIns/2, window.innerHeight/2-height*modDegree/2+(vars), sized, 1);
       distIn -= x;
     }
+		var b6  = c.toDataURL();
+		c.remove();
+		return b6;
 	};
   if(img.src == null || img.src === ""){
 		img.src = src;
   }
+
 }
