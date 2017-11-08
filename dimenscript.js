@@ -1,15 +1,10 @@
 //initialize the frame
 var c  = document.createElement("canvas");
 c.style = "position:absolute; top: 0; left: 0;"
-c.width = window.innerWidth;
-c.height = window.innerHeight;
+c.width = 1000;
+c.height = 1000;
 document.body.appendChild(c);
 var ctx = c.getContext("2d");
-
-window.onresize = function(){
-	c.width = window.innerWidth;
-  c.height =  window.innerHeight;
-}
 
 function renderImage(src,degree, w, h){
 	var modDegree = 0;
